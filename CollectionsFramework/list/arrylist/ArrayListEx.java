@@ -36,7 +36,12 @@ public class ArrayListEx {
         System.out.println("list1.retainAll(list2): " + list1.retainAll(list2));
         print(list1, list2);
 
-        list2.removeAll(list1);
+//        list2.removeAll(list1);
+        for(int i = list2.size() - 1; i >= 0; i--) {
+            if(list1.contains(list2.get(i))) {
+                list2.remove(i);
+            }
+        }
         print(list1, list2);
 
     }
