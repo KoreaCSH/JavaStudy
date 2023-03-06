@@ -18,7 +18,7 @@ public class HashMapEx3 {
         addPhoneNo("친구", "abcd", "010-7890-5678");
         addPhoneNo("학교", "korea", "010-9876-5678");
         addPhoneNo("학교", "yonsei", "010-1904-5678");
-        addPhoneNo("식당", "amiga", "010-0000-5678");
+        addPhoneNo("amiga", "010-0000-5678");
         printList();
     }
 
