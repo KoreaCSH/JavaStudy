@@ -38,5 +38,6 @@
 
   - [JVM](https://krchoish.tistory.com/49)
   - [Object 클래스](https://krchoish.tistory.com/24)
+  - [그래프 표현하기](https://krchoish.tistory.com/67)
  
   <br>
