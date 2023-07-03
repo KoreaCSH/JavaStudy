@@ -26,7 +26,7 @@ public class OptionalEx {
         System.out.println("opt: " + opt);
         System.out.println("opt2: " + opt2);
         System.out.println("opt.equals(opt2)?: " + opt.equals(opt2));
-        
+
     }
 
 }
