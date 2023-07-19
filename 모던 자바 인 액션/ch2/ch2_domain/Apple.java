@@ -1,3 +1,5 @@
+package ch2_domain;
+
 import java.util.ArrayList;
 import java.util.List;
 

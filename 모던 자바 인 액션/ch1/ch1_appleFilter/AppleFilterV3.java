@@ -1,3 +1,7 @@
+package ch1_appleFilter;
+
+import ch1_domain.Apple;
+import ch1_domain.Color;
 
 import java.util.*;
 import java.util.function.Predicate;

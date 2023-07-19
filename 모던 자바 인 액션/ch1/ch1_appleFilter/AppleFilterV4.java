@@ -1,3 +1,7 @@
+package ch1_appleFilter;
+
+import ch1_domain.Apple;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
