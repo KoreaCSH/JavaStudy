@@ -16,7 +16,7 @@ public class ApplePrinter {
         prettyPrintApple(apples, new AppleFancyFormatter());
 
         System.out.println();
-        
+
         prettyPrintApple(apples, apple -> "color : " + apple.getColor());
     }
 
