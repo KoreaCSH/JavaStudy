@@ -30,6 +30,7 @@ public class MethodReferenceEx1 {
         System.out.println(num2 == 12345);
     }
 
+    // return 형식을 List<Integer> 로 변경해 보자.
     public static Integer stringToInt(String str, StringToIntProcessor p) {
         return p.process(str);
     }
