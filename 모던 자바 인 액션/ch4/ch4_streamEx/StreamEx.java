@@ -19,6 +19,14 @@ public class StreamEx {
 
         System.out.println(threeHighCaloricDishNames);
 
+        List<String> vegetarianDishNames =
+                Dish.menu.stream()
+                        .filter(Dish::isVegetarian)
+                        .map(dish -> dish.getName())
+                        .collect(Collectors.toList());
+
+        System.out.println(vegetarianDishNames);
+
         // 컬렉션을 활용한 외부연산 vs 스트림을 활용한 내부연산
 
         // 1. 외부연산
