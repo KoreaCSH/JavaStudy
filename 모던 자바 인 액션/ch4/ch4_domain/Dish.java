@@ -22,6 +22,14 @@ public class Dish {
             new Dish("salmon", false, 450, Type.FISH)
     );
 
+    public static List<Dish> specialMenu = Arrays.asList(
+            new Dish("season fruit", true, 120, Type.OTHER),
+            new Dish("prawns", false, 300, Type.FISH),
+            new Dish("rice", true, 350, Type.OTHER),
+            new Dish("chicken", false, 400, Type.MEAT),
+            new Dish("french fries", true, 530, Type.OTHER)
+    );
+
     public Dish(String name, boolean vegetarian, int calories, Type type) {
         this.name = name;
         this.vegetarian = vegetarian;
