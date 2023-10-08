@@ -57,6 +57,14 @@ public class Practice {
                                             .collect(Collectors.toList());
 
         System.out.println(tradersCambridge);
+        // 3번 수정 - map 이후 filter, 그리고 comparing 활용
+        transactions.stream()
+                .map(Transaction::getTrader)
+                .filter(trader -> trader.getCity().equals("Cambridge"))
+                .distinct()
+                .sorted(comparing(Trader::getName))
+                .collect(Collectors.toList());
+
 
         // 4. 모든 거래자 이름을 알파벳순으로 정렬
         List<String> traders = transactions.stream()
@@ -92,6 +100,11 @@ public class Practice {
                                             .reduce(0, Integer::sum);
 
         System.out.println(cambridgeTraderValueTotal);
+        // 6번 수정 - 트랜잭션값 sum 이 아닌 print
+        transactions.stream()
+                .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+                .map(Transaction::getValue)
+                .forEach(System.out::println);
 
 
         // 7. 전체 트랜잭션 중 최댓값은?
@@ -108,6 +121,11 @@ public class Practice {
                                         .reduce(Integer::min);
 
         System.out.println(valueMin.get());
+
+        // 7, 8번 다른 정답
+        // stream 은 최댓값이나 최솟값을 계산하는 데 사용할 키를 지정하는 Comparator 를 인수로 받는 min, max 메서드를 제공한다.
+        Optional<Transaction> valueMinByStreamMin = transactions.stream()
+                                                        .min(comparing(Transaction::getValue));
     }
 
 }
