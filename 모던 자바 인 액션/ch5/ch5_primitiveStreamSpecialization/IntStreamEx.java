@@ -2,7 +2,8 @@ package ch5_primitiveStreamSpecialization;
 
 import ch4_domain.Dish;
 
-import java.util.OptionalInt;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -28,6 +29,18 @@ public class IntStreamEx {
         // 객체 스트림으로 복원하기 - boxed() 메서드 사용
         IntStream intStream = Dish.menu.stream().mapToInt(Dish::getCalories);
         Stream<Integer> boxed = intStream.boxed();
+
+        int[] array = new int[]{1, 2, 4};
+        Arrays.stream(array)
+                .boxed()
+                .toArray();
+
+        List<Integer> intListDesc = Arrays.stream(array)
+                .boxed()
+                .sorted(Collections.reverseOrder())
+                .collect(Collectors.toList());
+
+        System.out.println(intListDesc);
 
 
         // OptionalInt
