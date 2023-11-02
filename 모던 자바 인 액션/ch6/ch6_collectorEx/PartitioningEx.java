@@ -6,6 +6,7 @@ import ch4_domain.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
@@ -69,6 +70,30 @@ public class PartitioningEx {
                     );
 
         System.out.println(vegetarianCount);
+
+
+        // 숫자를 소수와 비소수로 분할
+        Map<Boolean, List<Integer>> primeMap = partitionPrimes(25);
+        System.out.println(primeMap);
+
+
+        // collectingAndThen 예제
+        int howManyDishes = Dish.menu.stream()
+                .collect(collectingAndThen(toList(), List::size));
+
+        System.out.println(howManyDishes);
+    }
+
+    static boolean isPrime(int candidate) {
+        int candidateRoot = (int) Math.sqrt(candidate);
+        return IntStream.rangeClosed(2, candidateRoot)
+                .noneMatch(i -> candidate % i == 0);
+    }
+
+    static Map<Boolean, List<Integer>> partitionPrimes(int n) {
+        return IntStream.rangeClosed(2, n)
+                .boxed()
+                .collect(partitioningBy(i -> isPrime(i)));
     }
 
 }
