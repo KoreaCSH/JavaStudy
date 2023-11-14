@@ -28,7 +28,7 @@ public class Dish {
     private final String name;
     private final boolean vegetarian;
     private final int calories;
-    private final Type type;
+    private Type type;
 
     public Dish(String name, boolean vegetarian, int calories, Type type) {
         this.name = name;
@@ -51,6 +51,10 @@ public class Dish {
 
     public Type getType() {
         return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     @Override
