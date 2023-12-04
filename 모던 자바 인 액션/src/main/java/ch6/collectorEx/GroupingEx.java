@@ -92,6 +92,13 @@ public class GroupingEx {
 
         System.out.println(typesCount);
 
+        // 간단 예제
+        int[] numbers = new int[]{1, 1, 3, 2, 4, 5, 7, 2};
+        Map<Integer, Long> integerCountMap = Arrays.stream(numbers).boxed()
+                        .collect(groupingBy(i -> i, counting()));
+
+        System.out.println(integerCountMap);
+
 
         Map<Type, Optional<Dish>> mostCaloricByType =
                 Dish.menu.stream()
